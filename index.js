@@ -10,6 +10,7 @@ const trendingRoutes = require('./routes/trendingRoutes')
 
 const cors = require('cors');
 const app = express();
+const PORT = process.env.PORT || 5000 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 const MONGO_DB = process.env.MONGODB_URI;
 
@@ -21,8 +22,12 @@ mongoose.connect(MONGO_DB)
 
 
 // Start Server
-app.listen(5000, () => {
-    console.log(`Server is running on port ${BASE_URL}`);
+// app.listen(5000, () => {
+//     console.log(`Server is running on port ${BASE_URL}`);
+// });
+
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${BASE_URL}`);
 });
 
 
